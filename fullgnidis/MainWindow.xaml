@@ -1,0 +1,96 @@
+﻿<Window x:Class="fullgnidis.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:fullgnidis"
+        mc:Ignorable="d"
+        Title="Обменник валют" Height="450" Width="800"
+        MinHeight="150" MinWidth="350"
+        Loaded="WindowLoaded">
+   
+        
+
+
+        <Grid x:Name="da">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+        </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Viewbox Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3"
+                 HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Обменник"/>
+        </Viewbox>
+        <ComboBox x:Name="SelectCur"
+                  Text="Выбери валюту"
+                  Grid.Row="2"
+                  Grid.Column="2"
+                  Grid.ColumnSpan="3"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  Height="35" Padding="10"
+                  SelectionChanged="SelectCur_SelectionChanged">
+            <ComboBoxItem Content="Доллары"  />
+            <ComboBoxItem Content="Евро" />
+            <ComboBoxItem Content="Фунты"/>
+            <ComboBoxItem Content="Юани" />
+            <ComboBoxItem Content="Йены" />
+        </ComboBox>
+        <TextBox 
+                x:Name="CurAmount"
+                Grid.Row="1"
+                Grid.Column="2"
+                Height="35"
+                Grid.ColumnSpan="3" 
+                TextWrapping="Wrap"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Text="" 
+                 />
+        <Button Content="Рубли в валюту"
+                Grid.Column="2"
+                Grid.Row="2"
+                Grid.RowSpan="2"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Height="35"
+                Click="Button_Click"/>
+        <TextBlock 
+                x:Name="RubAmount"
+                Grid.Row="3"
+                Grid.Column="2"
+                Height="35"
+                Grid.ColumnSpan="3" 
+                TextWrapping="Wrap"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Text="" 
+                />
+        <Button Content="Валюту в рубли"
+        Grid.Column="4"
+        Grid.Row="2"
+        Grid.RowSpan="2"
+        Height="35"
+        VerticalAlignment="Stretch"
+        HorizontalAlignment="Stretch"
+        Click="ReverseButton_Click"/>
+
+
+
+
+    </Grid>
+        
+    
+</Window>
